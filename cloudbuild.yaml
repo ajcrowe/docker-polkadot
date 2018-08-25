@@ -1,0 +1,28 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build',
+         '-t', 'ajcrowe/polkadot:latest',
+         '--build-arg', 'GIT_REF=$TAG_NAME',
+         '-f', 'Dockerfile', '.']
+
+- name: 'gcr.io/cloud-builders/docker'
+  entrypoint: 'bash'
+  args: ['-c', 'docker login --username=ajcrowe --password=$$PASSWORD']
+  secretEnv: ['PASSWORD']
+
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag', 'ajcrowe/polkadot:latest', 'ajcrowe/polkadot:$TAG_NAME']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'ajcrowe/polkadot:$TAG_NAME']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'ajcrowe/polkadot:latest']
+
+options:
+  machineType: 'N1_HIGHCPU_8'
+
+secrets:
+- kmsKeyName: projects/dco-crypto/locations/global/keyRings/docker/cryptoKeys/credentials
+  secretEnv:
+    PASSWORD: CiQAsWqH2jzheULAFpqNGl0PXYnF5M7BSaAwpSVKGwGYHtGlJAMSNQA+YXEkYrTc1zfi89t+kg5gqDFe0H+tyuFo/TSfw0cdBem0x2T3kKcDTLJQkFfUC3ZZFyG1
+
+timeout: 1800s
