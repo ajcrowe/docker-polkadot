@@ -1,7 +1,7 @@
 Polkadot Docker
 ===============
 
-This repo builds the [Parity Polkadot](https://github.com/paritytech/polkadot.git) node from the [Substrate](https://github.com/paritytech/substrate.git) repository.
+This builds the [Parity Polkadot](https://github.com/paritytech/polkadot.git) node from the [Substrate](https://github.com/paritytech/substrate.git) repository.
 
 All images are built with [Google Cloud Build] and are triggered automatically from any pushed tags.
 
@@ -20,7 +20,7 @@ docker run -e "ENABLE_DEV=true" -e "BASE_PATH=/data" ajcrowe/polkadot
 ## Building
 
 To build the container you simply need to pass in the git reference you want to build
-Repo Info
+
 ```
 docker build -t user/polkadot:v0.2 --build-arg GIT_REF=v0.2 .
 ```
