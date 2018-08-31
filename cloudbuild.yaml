@@ -18,7 +18,7 @@ steps:
   args: ['push', 'ajcrowe/polkadot:latest']
 
 options:
-  machineType: 'N1_HIGHCPU_8'
+  machineType: 'N1_HIGHCPU_32'
 
 secrets:
 - kmsKeyName: projects/dco-crypto/locations/global/keyRings/docker/cryptoKeys/credentials
