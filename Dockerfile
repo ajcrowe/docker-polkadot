@@ -15,11 +15,17 @@ RUN cargo install --git https://github.com/paritytech/substrate.git --rev $GIT_R
 FROM debian:stretch-slim
 
 RUN apt-get update && \
-    apt install -qy libssl1.1 ca-certificates && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -qy libssl1.1 ca-certificates locales && \
     rm -rf /var/lib/apt/*
 
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=en_US.UTF-8
+
+ENV LANG en_US.UTF-8
+
 # set the --base-path to default
-ENV BASE_PATH="/usr/share/polkadot"
+ENV BASE_PATH "/usr/share/polkadot"
 
 RUN useradd -md /usr/share/polkadot polkadot
 
