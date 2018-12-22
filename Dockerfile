@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt install -qy make clang pkg-config libssl-dev
 
-RUN cargo install --git https://github.com/paritytech/substrate.git --rev $GIT_REF polkadot
+RUN cargo install --git https://github.com/paritytech/polkadot.git --rev $GIT_REF polkadot
 
 # Build minimal runtime container
 FROM debian:stretch-slim
