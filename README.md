@@ -48,9 +48,12 @@ You can pass a number environment variables to configure the node
 | `BASE_PATH`          | `-d --base-path`   | Specify custom base path                                                                          |
 | `BOOTNODES`          | `--bootnodes`      | Specify a list of bootnodes                                                                       |
 | `CHAIN`              | `--chain`          | Specify the chain specification (one of krummelanke, dev, local or staging)                       |
+| `DB_CACHE`           | `--db-cache`       | Limit the memory the database cache can use                                                       |
 | `EXECUTION`          | `--execution`      | The means of execution used when calling into the runtime. Can be either wasm, native or both.    |
+| `IN_PEERS`           | `--in-peers`       | Specify the maximum number of incoming connections we're accepting                                |
 | `KEY`                | `--key`            | Specify additional key seed                                                                       |
 | `KEYSTORE_PATH`      | `--keystore-path`  | Specify custom keystore path                                                                      |
+| `LISTEN_ADDR`        | `--listen-addr`    | Listen on this multiaddress                                                                       |
 | `LOG`                | `-l --log`         | Sets a custom logging filter                                                                      |
 | `MAX_HEAP_PAGES`     | `--max-heap-pages` | The maximum number of 64KB pages to ever allocate for Wasm execution. Don't                       |
 | `MIN_HEAP_PAGES`     | `--min-heap-pages` | The number of 64KB pages to allocate for Wasm execution initially.                                |

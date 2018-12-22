@@ -21,9 +21,12 @@ options=(
 	'BASE_PATH,--base-path'
 	'BOOTNODES,--bootnodes'
 	'CHAIN,--chain'
+	'DB_CACHE,--db-cache'
 	'EXECUTION,--execution'
+	'IN_PEERS,--in-peers'
 	'KEY,--key'
 	'KEYSTORE_PATH,--keystore-path'
+	'LISTEN_ADDR,--listen-addr'
 	'LOG,--log'
 	'MAX_HEAP_PAGES,--max-heap-pages'
 	'MIN_HEAP_PAGES,--min-heap-pages'
@@ -33,8 +36,8 @@ options=(
 	'PRUNING,--pruning'
 	'RESERVED_NODES,--reserved-nodes'
 	'RPC_PORT,--rpc-port'
-	'WS_PORT,--ws-port'
 	'TELEMETRY_URL,--telemetry-url'
+	'WS_PORT,--ws-port'
 )
 
 for v in ${options[@]}; do
