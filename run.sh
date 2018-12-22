@@ -2,13 +2,13 @@
 
 # Build Flags
 flags=( 
-	'ENABLE_DEV,--dev'
-	'ENABLE_LIGHTCLIENT,--light'
-	'NO_TELEMETRY,--no-telelmetry'
-	'TELEMETRY,--telemetry'
-	'VALIDATOR,--validator'
-	'RPC_EXTERNAL,--rcp-external'
-	'WS_EXTERNAL,--ws-external'
+	'POLKADOT_ENABLE_DEV,--dev'
+	'POLKADOT_ENABLE_LIGHTCLIENT,--light'
+	'POLKADOT_NO_TELEMETRY,--no-telelmetry'
+	'POLKADOT_TELEMETRY,--telemetry'
+	'POLKADOT_VALIDATOR,--validator'
+	'POLKADOT_RPC_EXTERNAL,--rcp-external'
+	'POLKADOT_WS_EXTERNAL,--ws-external'
 )
 
 for v in ${flags[@]}; do
@@ -18,32 +18,32 @@ for v in ${flags[@]}; do
 done
 
 options=(
-	'BASE_PATH,--base-path'
-	'BOOTNODES,--bootnodes'
-	'CHAIN,--chain'
-	'DB_CACHE,--db-cache'
-	'EXECUTION,--execution'
-	'IN_PEERS,--in-peers'
-	'KEY,--key'
-	'KEYSTORE_PATH,--keystore-path'
-	'LISTEN_ADDR,--listen-addr'
-	'LOG,--log'
-	'MAX_HEAP_PAGES,--max-heap-pages'
-	'MIN_HEAP_PAGES,--min-heap-pages'
-	'NAME,--name'
-	'NODE_KEY,--node-key'
-	'PORT,--port'
-	'PRUNING,--pruning'
-	'RESERVED_NODES,--reserved-nodes'
-	'RPC_PORT,--rpc-port'
-	'TELEMETRY_URL,--telemetry-url'
-	'WS_PORT,--ws-port'
+	'POLKADOT_BASE_PATH,--base-path'
+	'POLKADOT_BOOTNODES,--bootnodes'
+	'POLKADOT_CHAIN,--chain'
+	'POLKADOT_DB_CACHE,--db-cache'
+	'POLKADOT_EXECUTION,--execution'
+	'POLKADOT_IN_PEERS,--in-peers'
+	'POLKADOT_KEY,--key'
+	'POLKADOT_KEYSTORE_PATH,--keystore-path'
+	'POLKADOT_LISTEN_ADDR,--listen-addr'
+	'POLKADOT_LOG,--log'
+	'POLKADOT_MAX_HEAP_PAGES,--max-heap-pages'
+	'POLKADOT_MIN_HEAP_PAGES,--min-heap-pages'
+	'POLKADOT_NAME,--name'
+	'POLKADOT_NODE_KEY,--node-key'
+	'POLKADOT_PORT,--port'
+	'POLKADOT_PRUNING,--pruning'
+	'POLKADOT_RESERVED_NODES,--reserved-nodes'
+	'POLKADOT_RPC_PORT,--rpc-port'
+	'POLKADOT_TELEMETRY_URL,--telemetry-url'
+	'POLKADOT_WS_PORT,--ws-port'
 )
 
 for v in ${options[@]}; do
 	env=$(echo $v | cut -d',' -f1)
-	flag=$(echo $v | cut -d',' -f2)
-	[ x${!env} != "x" ] && params="$params $flag ${!env}"
+	option=$(echo $v | cut -d',' -f2)
+	[ x${!env} != "x" ] && params="$params $option ${!env}"
 done
 
 /usr/local/bin/polkadot $params $@
