@@ -29,6 +29,8 @@ docker build -t user/polkadot:v0.3.0 --build-arg GIT_REF=v0.3.0 .
 
 You can pass a number environment variables to configure the node
 
+_Note: Prior to v0.3.0 environment variables were not prefixed with `POLKADOT_`_
+
 ### Flags
 
 | Environment Variable          | Flag               | Description                                                                                       |
