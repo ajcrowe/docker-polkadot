@@ -9,7 +9,12 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt install -qy make clang pkg-config libssl-dev
 
-RUN cargo install --git https://github.com/paritytech/polkadot.git --rev $GIT_REF polkadot
+WORKDIR /tmp/polkadot
+
+RUN git clone --branch $GIT_REF https://github.com/paritytech/polkadot.git . && \
+    ./scripts/init.sh && \
+    ./scripts/build.sh && \
+    cargo install --path ./ polkadot
 
 # Build minimal runtime container
 FROM debian:stretch-slim
