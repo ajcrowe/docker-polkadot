@@ -4,10 +4,13 @@
 flags=( 
 	'POLKADOT_ENABLE_DEV,--dev'
 	'POLKADOT_ENABLE_LIGHTCLIENT,--light'
+	'POLKADOT_FORCE_AUTHORING,--force-authoring'
+	'POLKADOT_NO_GRANDPA,--no-grandpa'
 	'POLKADOT_NO_TELEMETRY,--no-telelmetry'
+	'POLKADOT_NO_MDNS,--no-mdns'
+	'POLKADOT_RPC_EXTERNAL,--rcp-external'
 	'POLKADOT_TELEMETRY,--telemetry'
 	'POLKADOT_VALIDATOR,--validator'
-	'POLKADOT_RPC_EXTERNAL,--rcp-external'
 	'POLKADOT_WS_EXTERNAL,--ws-external'
 )
 
@@ -19,10 +22,13 @@ done
 
 options=(
 	'POLKADOT_BASE_PATH,--base-path'
+	'POLKADOT_BLOCK_CONSTRUCTION_EXECUTION,--block-construction-execution'
 	'POLKADOT_BOOTNODES,--bootnodes'
 	'POLKADOT_CHAIN,--chain'
 	'POLKADOT_DB_CACHE,--db-cache'
 	'POLKADOT_EXECUTION,--execution'
+	'POLKADOT_IMPORTING_EXECUTION,--importing-execution'
+	'POLKADOT_IN_PEERS,--in-peers'
 	'POLKADOT_IN_PEERS,--in-peers'
 	'POLKADOT_KEY,--key'
 	'POLKADOT_KEYSTORE_PATH,--keystore-path'
@@ -32,10 +38,19 @@ options=(
 	'POLKADOT_MIN_HEAP_PAGES,--min-heap-pages'
 	'POLKADOT_NAME,--name'
 	'POLKADOT_NODE_KEY,--node-key'
+	'POLKADOT_NODE_KEY_FILE,--node-key-file'
+	'POLKADOT_NODE_KEY_TYPE,--node-key-type'
+	'POLKADOT_OFFCHAIN_WORKER,--offchain-worker'
+	'POLKADOT_OFFCHAIN_WORKER_EXECUTION,--offchain-worker-execution'
+	'POLKADOT_OTHER_EXECUTION,--other-execution'
+	'POLKADOT_OUT_PEERS,--out-peers'
+	'POLKADOT_POOL_KBYTES,--pool-kbytes'
+	'POLKADOT_POOL_LIMIT,--pool-limit'
 	'POLKADOT_PORT,--port'
 	'POLKADOT_PRUNING,--pruning'
 	'POLKADOT_RESERVED_NODES,--reserved-nodes'
 	'POLKADOT_RPC_PORT,--rpc-port'
+	'POLKADOT_SYNCING_EXECUTION,--syncing-execution'
 	'POLKADOT_TELEMETRY_URL,--telemetry-url'
 	'POLKADOT_WS_PORT,--ws-port'
 )
