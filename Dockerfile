@@ -13,7 +13,6 @@ WORKDIR /tmp/polkadot
 
 RUN git clone --branch $GIT_REF https://github.com/paritytech/polkadot.git . && \
     ./scripts/init.sh && \
-    ./scripts/build.sh && \
     cargo install --path ./ polkadot
 
 # Build minimal runtime container
