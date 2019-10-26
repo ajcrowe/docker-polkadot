@@ -22,7 +22,7 @@ docker run -e "POLKADOT_ENABLE_DEV=true" -e "POLKADOT_BASE_PATH=/data" ajcrowe/p
 To build the container you simply need to pass in the git reference you want to build
 
 ```
-docker build -t user/polkadot:v0.4.0 --build-arg GIT_REF=v0.4.0 .
+docker build -t user/polkadot:v0.6.3 --build-arg GIT_REF=v0.6.3 .
 ```
 
 ## Environment Variables
@@ -30,13 +30,14 @@ docker build -t user/polkadot:v0.4.0 --build-arg GIT_REF=v0.4.0 .
 You can pass a number environment variables to configure the node
 
 _Note: Prior to v0.3.0 environment variables were not prefixed with `POLKADOT_`_
+_Note: These might be out of date please check `run.sh` for all available environment variables_
 
 ### Flags
 
 | Environment Variable          | Flag                | Description                                                                                          |
 |-------------------------------|---------------------|------------------------------------------------------------------------------------------------------|
-| `POLKADOT_ENABLE_DEV`         | `--dev`             | Run in development mode; implies --chain=dev --validator --key Alice                                 |
-| `POLKADOT_ENABLE_LIGHTCLIENT` | `--light`           | Run in light client mode                                                                             |
+| `POLKADOT_DEV`                | `--dev`             | Run in development mode; implies --chain=dev --validator --key Alice                                 |
+| `POLKADOT_LIGHT`              | `--light`           | Run in light client mode                                                                             |
 | `POLKADOT_FORCE-AUTHORING`    | `--force-authoring` | Enable authoring even when offline.                                                                  |
 | `POLKADOT_NO-GRANDPA`         | `--no-grandpa`      | Disable GRANDPA when running in validator mode                                                       |
 | `POLKADOT_NO_MDNS`            | `--no-mdns`         | By default, the network will use mDNS to discover other nodes on the local network. This disables it |
