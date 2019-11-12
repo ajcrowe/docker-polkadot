@@ -1,5 +1,5 @@
 # Build polkadot binary
-FROM rust:1.38 as builder
+FROM rust:1.39 as builder
 
 LABEL maintainer="Alex Crowe <alex@ajcrowe.io>"
 
