@@ -25,4 +25,4 @@ secrets:
   secretEnv:
     PASSWORD: CiQAsWqH2jzheULAFpqNGl0PXYnF5M7BSaAwpSVKGwGYHtGlJAMSNQA+YXEkYrTc1zfi89t+kg5gqDFe0H+tyuFo/TSfw0cdBem0x2T3kKcDTLJQkFfUC3ZZFyG1
 
-timeout: 1800s
+timeout: 2700s
